@@ -72,7 +72,7 @@
                         <div class="form-group  ">
                             {{Form::label('mid', '栏目类型', array('class' => 'col-sm-2 control-label'))}}
                             <div class="col-sm-5 basic_info">
-                                {{Form::radio('mid', '1', true,array('class'=>"flat-red"))}} 品牌类型
+                                {{Form::radio('mid', '1', true,array('class'=>"flat-red"))}} 封面频道
                                 {{Form::radio('mid', '0',false,array('class'=>"flat-red"))}} 普通文章
                             </div>
                         </div>

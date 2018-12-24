@@ -22,34 +22,14 @@ class ArticleController extends Controller
     public function GetArticle(Request $request,$path,$id)
     {
         $thistypeinfos=Arctype::findOrFail(Arctype::where('real_path',$path)->value('id'));
-        if ($thistypeinfos->mid==0)
-        {
-            $thisarticleinfos=Archive::find($id);
-            if ($thisarticleinfos->brandid)
-            {
-                $thisBrandArticle=Brandarticle::find($thisarticleinfos->brandid);
-            }
-            $published=$thisarticleinfos->created_at;
-            DB::table('archives')->where('id',$id)->update(['click'=>$thisarticleinfos->click+1,'published_at'=>$published]);
-            $prev_article = Archive::latest('published_at')->find($this->getPrevArticleId($thisarticleinfos->id));
-            $next_article = Archive::latest('published_at')->find($this->getNextArticleId($thisarticleinfos->id));
-            $xg_search=Archive::where('typeid',$thisarticleinfos->typeid)->take(10)->latest()->get();
-            $topbrands=Brandarticle::where('mid','1')->take(5)->orderBy('click','desc')->get();
-            $latestbrands=Brandarticle::where('mid','1')->latest()->take(5)->orderBy('id','desc')->get();
-            $latesenews=Archive::where('typeid','<>',$thisarticleinfos->arctype->id)->take(7)->latest()->get();
-            return view('frontend.article_article',compact('thisarticleinfos','thisBrandArticle','prev_article','next_article','xg_search','latestbrands','topbrands','latesenews'));
-        }else{
-            $thisarticleinfos=Brandarticle::findOrFail($id);
-            $pics=array_filter(explode(',',$thisarticleinfos->imagepics));
-            $brandnews=Archive::where('brandid',$id)->take(10)->orderBy('id','desc')->get();
-            $topbrands=Brandarticle::take(10)->orderBy('click','desc')->get();
-            $latesnews=Archive::take(5)->orderBy('id','desc')->get();
-            $latestbrands=Brandarticle::take(5)->orderBy('id','desc')->get();
-            $latestbrandnews=Archive::where('brandid','<>','')->take(10)->latest()->get();
-            $published=$thisarticleinfos->created_at;
-            DB::table('brandarticles')->where('id',$id)->update(['click'=>$thisarticleinfos->click+1,'published_at'=>$published]);
-            return view('frontend.brand_article',compact('thisarticleinfos','pics','brandnews','topbrands','latesnews','latestbrands','latestbrandnews'));
-        }
+        $thisarticleinfos=Archive::findOrFail($id);
+        $published=$thisarticleinfos->created_at;
+        DB::table('archives')->where('id',$id)->update(['click'=>$thisarticleinfos->click+1,'published_at'=>$published]);
+        $prev_article = Archive::latest('published_at')->find($this->getPrevArticleId($thisarticleinfos->id));
+        $next_article = Archive::latest('published_at')->find($this->getNextArticleId($thisarticleinfos->id));
+        $xg_search=Archive::where('typeid',$thisarticleinfos->typeid)->take(10)->latest()->get();
+        $latesenews=Archive::where('typeid','<>',$thisarticleinfos->arctype->id)->take(7)->latest()->get();
+        return view('frontend.article_article',compact('thisarticleinfos','thisBrandArticle','prev_article','next_article','xg_search','latesenews'));
    }
 
     /**品牌文档界面

@@ -72,10 +72,10 @@
                             {{Form::label('mid', '栏目类型', array('class' => 'col-sm-2 control-label'))}}
                             <div class="col-sm-5 basic_info">
                                 @if($typeinfos->mid==1)
-                                    {{Form::radio('mid', '1', true,array('class'=>"flat-red",'checked'=>'checked'))}} 品牌类型
+                                    {{Form::radio('mid', '1', true,array('class'=>"flat-red",'checked'=>'checked'))}} 封面频道
                                     {{Form::radio('mid', '0',false,array('class'=>"flat-red"))}} 普通文章
                                 @else
-                                    {{Form::radio('mid', '1', true,array('class'=>"flat-red"))}} 品牌类型
+                                    {{Form::radio('mid', '1', true,array('class'=>"flat-red"))}} 封面频道
                                     {{Form::radio('mid', '0',false,array('class'=>"flat-red",'checked'=>'checked'))}} 普通文章
                                 @endif
                             </div>
