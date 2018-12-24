@@ -27,8 +27,8 @@ $factory->define(App\AdminModel\Admin::class, function (Faker\Generator $faker) 
     static $password;
 
     return [
-        'name' => '梁李良',
-        'email' => 'liang569874@163.com',
+        'name' => '魏二岑',
+        'email' => 'weicencen@163.com',
         'type' => 1,
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
