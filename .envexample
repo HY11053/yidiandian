@@ -1,13 +1,13 @@
-APP_NAME=czga
+APP_NAME=yidiandian
 APP_ENV=local
 APP_KEY=base64:z5zNR9chkhO+17SZRTe+mpiOKI/1yZNlZvkllSk1T8c=
 APP_DEBUG=true
 APP_LOG_LEVEL=debug
-APP_URL=http://www.czga.cn
+APP_URL=http://www.yidiandian.com
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=czga
+DB_DATABASE=yidiandian
 DB_USERNAME=root
 DB_PASSWORD=
 BROADCAST_DRIVER=log

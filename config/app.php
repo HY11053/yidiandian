@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', '干洗店投资网'),
+    'name' => env('APP_NAME', '一点点奶茶加盟'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://www.czga.cn'),
+    'url' => env('APP_URL', 'http://www.yidiandian.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -132,13 +132,13 @@ return [
     | Site home page key words and description and record information
     | and other related settings
     */
-    'webname'=>'干洗店投资网-干洗店加盟品牌连锁招商投资平台',
-    'indexname'=>'干洗店投资网',
-    'keywords'=>'干洗店加盟,洗衣店加盟,干洗店投资,投资开干洗店,干洗店加盟连锁,干洗店投资网',
-    'description'=>'干洗店投资网连锁招商加盟平台打造专业干洗投资在线信息平台，汇集全行业干洗店品牌投资信息及干洗店成本、利润、设备价格以及干洗店加盟费用等投资难题，让您开店无忧',
-    'api'=>'http://data.zz.baidu.com/urls?site=www.czga.cn&token=QeSFIvl5RWRgU3BT',
-    'mip_api'=>'http://data.zz.baidu.com/urls?site=mip.czga.cn&token=QeSFIvl5RWRgU3BT&type=mip',
-    'mip_history'=>'http://data.zz.baidu.com/urls?site=m.czga.cn&token=QeSFIvl5RWRgU3BT',
+    'webname'=>'一点点奶茶加盟-奶茶店加盟品牌连锁招商投资平台',
+    'indexname'=>'一点点奶茶加盟',
+    'keywords'=>'',
+    'description'=>'',
+   // 'api'=>'http://data.zz.baidu.com/urls?site=www.czga.cn&token=QeSFIvl5RWRgU3BT',
+    //'mip_api'=>'http://data.zz.baidu.com/urls?site=mip.czga.cn&token=QeSFIvl5RWRgU3BT&type=mip',
+    //'mip_history'=>'http://data.zz.baidu.com/urls?site=m.czga.cn&token=QeSFIvl5RWRgU3BT',
     /*
 
     /*
