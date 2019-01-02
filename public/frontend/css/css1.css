@@ -90,7 +90,7 @@ a{text-decoration:none}
 .storeindex{ height:300px; background:#f2f2f2}
 .marqueeleft{overflow:hidden;}
 .marqueeleft ul{float:left;}
-.marqueeleft li{float:left;display:inline;overflow:hidden; position:relative; width:380px; height:280px; overflow:hidden; border:10px solid #f2f2f2;border-left:5px solid #f2f2f2;border-right:5px solid #f2f2f2;}
+.marqueeleft li{float:left;display:inline;overflow:hidden; position:relative; width:300px; height:280px; overflow:hidden; border:10px solid #f2f2f2;border-left:5px solid #f2f2f2;border-right:5px solid #f2f2f2;}
 .marqueeleft li p{ width:0; position:absolute; bottom:0; display:block; line-height:60px; color:#fff; font-size:16px; text-align:center;background:#02734a; height:60px; overflow:hidden}
 .marqueeleft li:hover p{ width:100%; transition:width 0.2s}
 

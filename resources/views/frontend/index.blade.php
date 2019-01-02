@@ -193,8 +193,8 @@
                 <ul id="marquee4_1">
                     @foreach($productions as $production)
                         <li>
-                            <a href="/{{$production->arctype->real_apth}}/{{$production->id}}.shtml">
-                                <img  src="{{$production->litpic}}" width="380" height="280" alt="{{$production->title}}"/>
+                            <a href="/{{$production->arctype->real_path}}/{{$production->id}}.shtml">
+                                <img  src="{{$production->litpic}}" width="300" height="280" alt="{{$production->title}}"/>
                                 <p>{{$production->title}}</p>
                             </a>
                         </li>

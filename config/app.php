@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 return [
 
@@ -132,10 +132,10 @@ return [
     | Site home page key words and description and record information
     | and other related settings
     */
-    'webname'=>'一点点奶茶加盟-奶茶店加盟品牌连锁招商投资平台',
+    'webname'=>'一点点奶茶加盟-现泡饮品连锁品牌',
     'indexname'=>'一点点奶茶加盟',
-    'keywords'=>'',
-    'description'=>'',
+    'keywords'=>'一点点奶茶加盟,一点点奶茶加盟费,奶茶店加盟',
+    'description'=>'一点点奶茶加盟成立于2011年,隶属于生根餐饮管理(上海)有限公司,专注于国内饮品加盟市场,拥有完善的饮品加盟体系,周到的饮品加盟保障服务！',
    // 'api'=>'http://data.zz.baidu.com/urls?site=www.czga.cn&token=QeSFIvl5RWRgU3BT',
     //'mip_api'=>'http://data.zz.baidu.com/urls?site=mip.czga.cn&token=QeSFIvl5RWRgU3BT&type=mip',
     //'mip_history'=>'http://data.zz.baidu.com/urls?site=m.czga.cn&token=QeSFIvl5RWRgU3BT',
