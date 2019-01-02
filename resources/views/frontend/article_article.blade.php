@@ -25,7 +25,7 @@
         <div class="ydd_1000 list_a">
             <div class="list_l" id="inner">
                 <div class="l_img"><img src="/frontend/images/list_06.jpg" width="250" height="170" alt="一点点奶茶新鲜" data-bd-imgshare-binded="1"></div>
-                <div class="l_img"><a href="#"><img src="/fronetend/images/list_09.jpg" width="250" height="68" alt="一点点奶茶申请" data-bd-imgshare-binded="1"></a></div>
+                <div class="l_img"><a href="#"><img src="/frontend/images/list_09.jpg" width="250" height="68" alt="一点点奶茶申请" data-bd-imgshare-binded="1"></a></div>
                 <div class="l_ts">
                     <p>信息推荐</p>
                     <ul>
