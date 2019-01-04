@@ -18,7 +18,7 @@
 <body>
 <div class="ydd_con nav">
     <div class="ydd_1000">
-        <div class="logo"> <h1><a href="http://www.yidiandianjm.com/"><img src="/frontend/images/logo.jpg" width="170" height="100" alt="一点点官网"/></a></h1>
+        <div class="logo"> <h1><a href="{{config('app.url')}}"><img src="/frontend/images/logo.jpg" width="170" height="100" alt="一点点官网"/></a></h1>
         </div>
         <ul>
             <li>

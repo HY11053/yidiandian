@@ -12,75 +12,83 @@
     <title>@yield('title')</title>
     <meta name="keywords" content="@yield('keywords')"/>
     <meta name="description" content="@yield('description')"/>
-    <link rel="canonical" href="{{config('app.url')}}{{Request::getrequesturi()}}" >
-    <link rel="miphtml" href="{{str_replace('http://www.','http://mip.',config('app.url'))}}{{Request::getrequesturi()}}">
-    <link href="/mobile/css/common.css" rel="stylesheet" type="text/css"/>
+    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/mobile/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     @yield('headlibs')
 </head>
 <body>
-<div class="header clearfix mtop84">
-    <div class="search clearfix">
-        <div class="city fl">
-            <a href="/"><img src="/mobile/images/nav-logo2.png" alt="干洗店投资网"/></a>
-        </div>
-        <div class="searchCon fl">
-            <form action="/sprodlist/all/" method="post">
-                {{csrf_field()}}
-            <div class="ipt-box"></div>
-            <input class="ipt-placeholder" placeholder="输入您想找的项目" />
-            <button type="submit" class="search_btn"></button>
-            </form>
-        </div>
-        <div class="message fr">
-            <b>项目分类</b>
-        </div>
-        <div class="d_nav">
-            <ul>
-                <li><a href="/" target="_self"><span>首页</span></a></li>
-                <li><a href="/item/" target="_self"><span>品牌大全</span></a></li>
-                <li><a href="/cost/" target="_self"><span>干洗店成本</span></a></li>
-                <li><a href="/investment/" target="_self"><span>干洗店投资</span></a></li>
-                <li><a href="/profit/" target="_self"><span>干洗店利润</span></a></li>
-                <li><a href="/devices/" target="_self"><span>干洗店设备</span></a></li>
-                <li><a href="/technology/" target="_self"><span>干洗技术</span></a></li>
-                <li><a href="/news/" target="_self"><span>品牌新闻</span></a></li>
-                <li><a href="/paihangbang/" target="_self"><span>干洗店排行榜</span></a></li>
-            </ul>
-        </div>
+<nav class="navbar navbar-default" style="margin:0px; padding:0px; position:relative;" >
+
+    <div style="line-height:0;"><img src="/mobile/images/logo.jpg" width="100%"/></div>
+
+    <div class="navbar-header" >
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" style="position:absolute; right:0; top:14px;" >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
 
     </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="/">首页</a></li>
+            <li><a href="/ppjs/">品牌介绍</a></li>
+            <li><a href="/productions/">产品展示</a></li>
+            <li><a href="/fynews/">新闻动态</a></li>
+            <li><a href="/mendian/">门店展示</a></li>
+            <li><a href="/anlinews/">开店案例</a></li>
+            <li><a href="/tznews/">加盟费用</a></li>
+            <li><a href="/lirunnews/">利润分析</a></li>
+        </ul>
+    </div>
 
-</div>
+</nav>
 @yield('main_content')
-<footer>
-    <div class="link-box ">
-        <a href="{{config('app.url')}}" class="foot-link">电脑版</a><span class="v-line">|</span>
-        <a href="/cost/" class="foot-link">干洗店成本</a><span class="v-line">|</span>
-        <a href="/profit/" class="foot-link">干洗店利润</a><span class="v-line">|</span>
-        <a href="/investment/" class="foot-link">干洗店投资</a><span class="v-line">|</span>
-        <a href="/paihangbang/" class="foot-link">品牌排行榜</a>
+<div id="item5" class="clearfix">
+    <div class="item5box">
+        <i></i>
+        <div class="title">在线留言</div>
+        <form onsubmit="return false;">
+            <div class="inputbox">
+                <input type="text" name="username" id="guestname" value="" placeholder="您的真实姓名">
+                <span>姓名：</span>
+                <div class="tip">*姓名不可以为空</div>
+            </div>
+            <div class="inputbox">
+                <input type="tel" name="iphone" id="phonenum" value="" placeholder="电话是与您联系的重要方式">
+                <span>手机：</span>
+                <div class="tip">*不是完整的11位手机号或者正确的手机号前七位</div>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="note" id="note" value="" placeholder="我对此项目很感兴趣，请联系我。">
+                <span>留言：</span>
+                <div class="tip">*留言不可以为空</div>
+            </div>
+            <button type="submit" id="tj_btn" class="submitmessagebtn">提交留言</button>
+        </form>
+        <div class="lysm">
+            本站为资讯展示网站，本网页信息来源互联网，本平台不保证信息的真实性，请用户自行与商家联系核对真实性。此次留言将面向网站内所有页面项目产生留言。
+        </div>
     </div>
-    <p class="firm clearfix">
-        <span class="foot-text mgr15">上海桥梓网络科技有限公司 版权所有</span>
-    </p>
+</div>
+<footer>
+    <div class="bottomFooter">
+        <div class="address_info relative">
+            <div class="address_pic1 absolute"></div>
+            <!--<div class="address_pic2 absolute"></div>-->
+            <address class="col-xs-offset-5"><span class="glyphicon glyphicon-earphone"></span> 电话： 15000814494<br/> <span class="glyphicon glyphicon-print"></span>
+                <span class="glyphicon glyphicon-map-marker"></span> 一点点奶茶加盟有限公司<br />
+                <span class="glyphicon glyphicon-ok-circle"></span> 沪ICP备14001904号<br />
+            </address>
+            <a href="javascript:void(0);" target="_blank" onclick="openZoosUrl();return false;"class="address_online absolute" target="_blank"></a>
+            <a href="javascript:void(0)"  onclick="openZoosUrl();return false;" class="hAbout absolute" target="_self"></a>
+        </div>
+    </div>
 </footer>
-<script type="text/javascript" src="/frontend/js/jquery.min.js"></script>
-<script type="text/javascript" src="/frontend/js/swiper.min.js"></script>
-<script type="text/javascript" src="/mobile/js/index.js"></script>
-@yield('footlibs')
-<script>
-    (function(){
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        }
-        else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="/mobile/js/index.js"></script>
 </body>
 </html>

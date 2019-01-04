@@ -1,105 +1,69 @@
 @extends('mobile.mobile')
-@section('title'){{$thisarticleinfos->title}}-{{config('app.indexname')}}@stop
+@section('title'){{$thisarticleinfos->title}}@stop
 @section('keywords'){{$thisarticleinfos->keywords}}@stop
 @section('description'){{trim($thisarticleinfos->description)}}@stop
-@section('headlibs')
-    <link href="/mobile/css/article.css" rel="stylesheet" type="text/css"/>
-    <link href="/mobile/css/brand.css" rel="stylesheet" type="text/css"/>
-    <link href="/frontend/css/swiper.min.css" rel="stylesheet" type="text/css"/>
-@stop
 @section('main_content')
-    <div class="weizhi">
-	<span><a href="/">首页</a>&nbsp;>&nbsp;
-        <a href="{{str_replace('www.','m.',config('app.url'))}}/{{$thisarticleinfos->arctype->real_path}}/">{{$thisarticleinfos->arctype->typename}}</a>&nbsp;>&nbs&nbsp;>&nbsp;详情：
-    </span>
-    </div>
-    <div id="item1">
-        <div class="item1box">
-            <div class="item1boxleft fl">
-                <div class="title">{{$thisarticleinfos->brandname}}加盟</div>
-                <div class="text">{{$thisarticleinfos->brandgroup}}</div>
-                <div class="time"><span>{{date('Y-m-d',strtotime($thisarticleinfos->created_at))}}</span></div>
-            </div>
-            <div class="item1boxmiddle fl">
-                <div class="top" style="font-weight: bold;">{{$thisarticleinfos->brandpay}}</div>
-                <a href="#item5"><div class="bottom"></div></a>
-            </div>
-            <div class="item1boxright fr clearfix">
-                <a href="#item5"><img class="js_popup" src="/mobile/images/liuyan.png" alt="在线留言"></a>
-                <div class="text">在线留言</div>
-            </div>
-        </div>
-    </div>
-    <div id="item4">
-        <div class="item4box">
-            <div class="item4content">
-                <div class="content">
-                    <div class="jm_xq" id="b-info">
-                        <div class="tb-first">
-                            <div class="title" id="o-info_1">
-                                <h2>{{$thisarticleinfos->brandname}}——{{$thisarticleinfos->brandpsp}}</h2>
-                            </div>
-                            <div class="jm_xq_con">
-                                {!! $thisarticleinfos->body !!}
-                            </div>
-                    </div>
-                    <div class="zhuanzai">
-                        <i></i>如需更进一步了解{{$thisarticleinfos->brandname}}品牌加盟相关信息，可留言咨询我们，如因内容、版权或其它问题，请及时和本站取得联系，我们将第一时间删除内容！
-                    </div>
-                </div>
-                <div class="display" style="display: none;"><span>展开</span><i></i></div>
-            </div>
-        </div>
-    </div>
-    </div>
-    <div id="item7">
-        <div class="item7box clearfix">
-            <i></i>
-            <div class="title">项目资讯</div>
-            <div class="item7content">
-                @foreach($brandnews as $brandnew)
-                <div class="item7list">
-                    <a href="/{{$brandnew->arctype->real_path}}/{{$brandnew->id}}.shtml">
-                        <div class="left fl">
-                            <div class="lefttitle">{{$brandnew->title}}</div>
-                            <div class="text">
-                                <div class="message">编辑：干洗店投资网</div>
+    <p class="bg-primary"> &nbsp;&nbsp;<a href='/'>主页</a> > <a href='/{{$thisarticleinfos->arctype->real_path}}/'>{{$thisarticleinfos->arctype->typename}}</a></p>
+    <div class="container-fluid list_clear">
+        <div clas="row">
+            <div class="col-xs-12">
+                <div id="content">
+                    <!--品牌介绍 Start-->
+                    <div class="brand_js">
+                        <dl class="clearfix">
+                            <dt class="col-xs-5"><img src="{{$thisarticleinfos->litpic}}"  /></dt>
+                            <dd class="col-xs-7">
+                                <h1>{{$thisarticleinfos->brandname}}</h1>
+                                <em>品牌名称:{{$thisarticleinfos->brandname}}</em><br/>
+                                <em>加盟人气：{{$thisarticleinfos->click}}</em><br/>
+                                <em>加盟费：{{$thisarticleinfos->brandpay}}</em><br/>
+                                <strong></strong>
+                            </dd>
+                        </dl>
+                        <div class="brand_js2 col-xs-12">
+                            <p><strong>区域特许：</strong>{{$thisarticleinfos->brandduty}}</p>
+                            <p><strong>主营产品：</strong>{{$thisarticleinfos->brandmap}}</p>
+                            <p><strong>加盟区域：</strong>{{$thisarticleinfos->brandarea}}</p>
+                            <p><strong>公司名称：</strong>{{$thisarticleinfos->brandgroup}}</p>
+                            <div class="ly_button">
+                                <a href="#liuyan" class="ly_b1">快速留言</a>
                             </div>
                         </div>
-                        <div class="right fr">
-                            <img src="{{$brandnew->litpic}}">
-                        </div>
-                    </a>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
+                    </div>
+                    <!--品牌介绍 End-->
 
-    <div id="item8">
-        <div class="item8box clearfix">
-            <i></i>
-            <div class="title">品牌推荐</div>
-            <div class="item8content">
-                @foreach($topbrands as $index=>$topbrand)
-                    <div class="item8list @if(($index+1)%2==0) fl @else fr @endif">
-                        <a href="/{{$topbrand->arctype->real_path}}/{{$topbrand->id}}.shtml">
-                            <img src="{{$topbrand->litpic}}" alt="{{$topbrand->brandname}}">
-                            <div class="item8listcontent">
-                                <div class="listtitle">{{$topbrand->brandname}}</div>
-                                <div class="listtext">
-                                    <p>{{$topbrand->brandgroup}}</p>
+                    <script>
+                        $(function(){
+                            var nrW = $('.brand_content1').width();
+                            $('.brand_content1 img').each(function(){
+                                if($(this).width() > nrW)
+                                    $(this).css('width',nrW);
+                                $(this).css('height','auto');
+                            })
+                        });
+                    </script>
+                    <div class="brand_content">
+                       {!! $thisarticleinfos->body !!}
+                        <div class="brand_content1 clearfix">
+                            <div class="col-xs-12 btn_marign">
+                                <div class="col-xs-6"><a href="javascript:void(0)" onclick="openZoosUrl();return false;">
+                                        <button  type="submit"  class="btn btn-danger">开店咨询</button></a>
                                 </div>
-                                <div class="textleft fl">￥{{$topbrand->brandpay}}
-                                </div>
-                                <div class="textright fr">
-                                    {{date('Y-m-d',strtotime($topbrand->created_at))}}
-                                </div>
+                                <div class="col-xs-6"><a href="javascript:void(0)" onclick="openZoosUrl();return false;"><button type="submit"  class="btn btn-warning">索要资料</button></a></div>
                             </div>
-                        </a>
+                        </div>
                     </div>
-                @endforeach
+                </div>
             </div>
         </div>
     </div>
+    <ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
+        <p class="bg-primary">&nbsp;&nbsp;<span class="glyphicon glyphicon-flag" style="font-size: 12pt;"></span>&nbsp;相关阅读</p>
+    </ul>
+    <ul class="list-group tjw_z">
+        @foreach($latesnews as $latesnew)
+        <li class="list-group-item"><a href="/{{$latesnew->arctype->real_path}}/{{$latesnew->id}}.shtml" >{{$latesnew->title}}</a></li>
+        @endforeach
+    </ul>
+    <hr/>
 @stop
